@@ -1,5 +1,6 @@
 package fr.univ_amu.iut.exercice2;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
@@ -46,6 +47,8 @@ public class CompteurController {
     //
     // Utiliser Bindings.convert(...) ou compteur.asString() pour obtenir un StringBinding,
     // puis labelCompteur.textProperty().bind(...).
+    Bindings.convert(compteur);
+    labelCompteur.textProperty().bind(Bindings.convert(compteur));
     //
     // Ainsi, chaque fois que la valeur de `compteur` change (via incrementer/decrementer/reinit),
     // le label se met à jour automatiquement - aucun setText() à appeler !
@@ -60,18 +63,23 @@ public class CompteurController {
   @FXML
   private void incrementer() {
     // TODO exercice 2 : incrémenter la valeur de la propriété compteur.
+    compteur.get();
+    compteur.set(getCompteur() + 1);
   }
 
   /** Action du bouton −. Décrémente le compteur. */
   @FXML
   private void decrementer() {
     // TODO exercice 2 : décrémenter la valeur de la propriété compteur.
+    compteur.get();
+    compteur.set(getCompteur() - 1);
   }
 
   /** Action du bouton Réinitialiser. Remet le compteur à zéro. */
   @FXML
   private void reinitialiser() {
     // TODO exercice 2 : remettre la propriété compteur à 0.
+    compteur.set(0);
   }
 
   /**
