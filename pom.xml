@@ -21,6 +21,7 @@
         <!-- Java & JavaFX versions -->
         <maven.compiler.release>25</maven.compiler.release>
         <javafx.version>26</javafx.version>
+        <javafx.platform.classifier>linux</javafx.platform.classifier>
         <javafx.mainClass>tp3.javafx/fr.univ_amu.iut.App</javafx.mainClass>
 
         <!-- Plugin versions -->
@@ -46,21 +47,25 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
+            <classifier>${javafx.platform.classifier}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
+            <classifier>${javafx.platform.classifier}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
+            <classifier>${javafx.platform.classifier}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
             <version>${javafx.version}</version>
+            <classifier>${javafx.platform.classifier}</classifier>
         </dependency>
 
         <!-- JUnit 5 -->
@@ -195,11 +200,13 @@
                          glass.platform=Headless, pas de TestFX. -->
                     <systemPropertyVariables>
                         <glass.platform>Headless</glass.platform>
+                        <javafx.platform>Headless</javafx.platform>
                         <prism.order>sw</prism.order>
                         <java.awt.headless>true</java.awt.headless>
                         <testfx.robot>glass</testfx.robot>
                     </systemPropertyVariables>
-                    <!-- Mode classpath (useModulePath=false) : JavaFX charge dans le module *unnamed*.
+                    <!-- Mode classpath (useModulePath=false) : JavaFX charge dans le module
+                    *unnamed*.
                          Les flags ciblant des modules nommes (javafx.graphics, javafx.base) declenchent
                          "WARNING: Unknown module ..." sans effet. On ne garde que ALL-UNNAMED, qui couvre
                          l'acces natif du JavaFX headless. -->
@@ -220,9 +227,9 @@
                         <googleJavaFormat>
                             <version>${google.java.format.version}</version>
                         </googleJavaFormat>
-                        <removeUnusedImports/>
-                        <trimTrailingWhitespace/>
-                        <endWithNewline/>
+                        <removeUnusedImports />
+                        <trimTrailingWhitespace />
+                        <endWithNewline />
                     </java>
                 </configuration>
             </plugin>
