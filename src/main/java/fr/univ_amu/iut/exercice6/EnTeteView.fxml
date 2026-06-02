@@ -15,25 +15,25 @@
 -->
 
 <HBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="fr.univ_amu.iut.exercice6.EnTeteController"
-      alignment="CENTER_LEFT"
-      style="-fx-background-color: white; -fx-border-color: #d0d7de; -fx-border-width: 0 0 1 0;">
+  fx:controller="fr.univ_amu.iut.exercice6.EnTeteController"
+  alignment="CENTER_LEFT"
+  style="-fx-background-color: white; -fx-border-color: #d0d7de; -fx-border-width: 0 0 1 0;">
 
   <padding>
-    <Insets top="14" right="20" bottom="14" left="20"/>
+    <Insets top="14" right="20" bottom="14" left="20" />
   </padding>
 
   <VBox spacing="2">
     <Label text="Mes sites de suivi"
-           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+      style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
     <Label fx:id="labelSousTitre"
-           text="Aucun site déclaré"
-           style="-fx-text-fill: #6a737d;"/>
+      text="Aucun site déclaré"
+      style="-fx-text-fill: #6a737d;" />
   </VBox>
 
-  <Region HBox.hgrow="ALWAYS"/>
+  <Region HBox.hgrow="ALWAYS" />
 
   <Button fx:id="boutonNouveauSite"
-          text="+ Nouveau site"
-          style="-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16 8 16;"/>
+    text="+ Nouveau site"
+    style="-fx-background-color: #4a90d9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16 8 16;" />
 </HBox>
